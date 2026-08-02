@@ -4,11 +4,11 @@ export default async ({ req, res, log }) => {
     return res.send("", 204, {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "Content-Type, Authorization",
-      "Access-Control-Allow-Methods": "POST, OPTIONS"
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
     });
   }
 
-  // Normal POST request
+  // Handle actual POST request
   log("Function executed");
 
   return res.json(
@@ -17,7 +17,7 @@ export default async ({ req, res, log }) => {
     {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "Content-Type, Authorization",
-      "Access-Control-Allow-Methods": "POST, OPTIONS"
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
     }
   );
 };
