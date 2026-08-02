@@ -1,4 +1,5 @@
 export default async ({ req, res, log }) => {
+  // Handle preflight OPTIONS request
   if (req.method === "OPTIONS") {
     return res.send("", 204, {
       "Access-Control-Allow-Origin": "*",
@@ -7,6 +8,7 @@ export default async ({ req, res, log }) => {
     });
   }
 
+  // Normal POST request
   log("Function executed");
 
   return res.json(
@@ -19,3 +21,4 @@ export default async ({ req, res, log }) => {
     }
   );
 };
+
